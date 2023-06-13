@@ -1,0 +1,51 @@
+/*========VALIDANDO DATOS DEL FORMULARIO DE REGISTRO=== */
+
+document.getElementById("formulario").addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  let nameIngresado = document.getElementById("name");
+  let error_name = document.getElementById("nameError");
+
+  if (nameIngresado.value.trim() === "") {
+    //trim quita espacios laterales del input
+    error_name.textContent = "Por favor, ingresa tu nombre";
+    error_name.classList.add("error-message");
+  } else {
+    error_name.textContent = "";
+    error_name.classList.remove("error-message");
+  }
+
+  let emailIngresado = document.getElementById("email");
+  let emailError = document.getElementById("emailError");
+  let formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular de un formato de email
+
+  if (!formatoEmail.test(emailIngresado.value)) {
+    emailError.textContent = "Por favor, ingresá un email válido";
+    emailError.classList.add("error-message");
+  } else {
+    emailError.textContent = "";
+    emailError.classList.remove("error-message");
+  }
+  let contrasenaEnter = document.getElementById("password");
+  let contrasenaError = document.getElementById("passwordError");
+  let contrasenaPatron =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
+
+  if (!contrasenaPatron.test(contrasenaEnter.value)) {
+    contrasenaError.textContent =
+      "La contraseña debe tener al menos 8 caracteres, números, mayúsculas y minúsculas y caracteres especiales";
+    contrasenaError.classList.add("error-message");
+  } else {
+    contrasenaError.textContent = "";
+    contrasenaError.classList.remove("error-message");
+  }
+
+  if (
+    !error_name.textContent &&
+    !emailError.textContent &&
+    !contrasenaError.textContent
+  ) {
+    alert("REGISTRO EXITOSO!BIENVENIDO A NUESTRA COMUNIDAD");
+    document.getElementById("formulario").reset(); //Para que se limpien los campos una vez enviado
+  }
+});

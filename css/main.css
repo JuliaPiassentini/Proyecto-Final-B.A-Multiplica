@@ -1,0 +1,586 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    gap: 5rem;
+    background-color: #ececec;
+}
+
+.logo {
+    max-width: 5rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo img {
+    border-radius: 10%;
+    box-shadow: 5px 5px 30px #555454;
+}
+
+/*Este posicion de 1 es para que el menu desplegable quede por encima del slider-carousel*/
+.nav {
+    z-index: 1;
+    position: relative;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    padding: 0.25rem;
+}
+
+.nav-list li :hover:not(.activo) {
+    /*Hacemos hover tan solo sobre links no activos*/
+    border-bottom: 1px solid;
+}
+
+.menu-open,
+.menu-close {
+    display: none;
+}
+
+.nav-list li a.activo {
+    border-bottom: 1px solid;
+}
+
+h2,
+h3 {
+    width: auto;
+    padding: 1rem;
+}
+
+/*Clase del boton del carousel >next se le aplica z index inferior a la del menu hamburguesa desplegado */
+.carousel-control-next {
+    z-index: 0;
+}
+
+/*Propiedad object-fit con valor cover me solucionó problema de imagenes de distintas dimenciones, esta propiedad envevida en una clase normalizadora que se le asigno a cada img del carousel*/
+.img-normalizada {
+    width: 100%;
+    height: 515px;
+    object-fit: cover;
+}
+
+.seccion-primera {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    text-justify: distribute-all-lines;
+    padding-top: 3rem;
+    border-top: 3rem;
+}
+
+.contenedor {
+    margin: auto;
+    padding-top: 40px;
+}
+
+.contenido {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    text-align: center;
+}
+
+.inner h3 {
+    margin: 0;
+}
+
+.contenido.inner p {
+    line-height: 1.7;
+    margin: 0%;
+    padding: 1px;
+}
+
+.inner p {
+    text-justify: distribute-all-lines;
+}
+
+.tablero-container {
+    width: 92%;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.card>span {
+    padding: 15px 0 0px 10px;
+    text-transform: uppercase;
+    color: #444;
+}
+
+.card>article {
+    padding: 20px 20px 20px 20px;
+    color: #444;
+    font-weight: bold;
+}
+
+.card article {
+    font-weight: bold;
+}
+
+.img {
+    padding-left: 0;
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center;
+}
+
+.img1 {
+    background-image: url(../img/item-1.png);
+}
+
+.img2 {
+    background-image: url(../img/item-2.png);
+}
+
+.img3 {
+    background-image: url(../img/item-3.png);
+}
+
+.img4 {
+    background-image: url(../img/item-4.png);
+}
+
+.img5 {
+    background-image: url(../img/item-5.png);
+}
+
+.img6 {
+    background-image: url(../img/item-6.png);
+}
+
+.img7 {
+    background-image: url(../img/item-7.png);
+}
+
+.img8 {
+    background-image: url(../img/item-8.png);
+}
+
+form {
+    width: 50%;
+    margin: 5% auto;
+    min-height: 87vh;
+    background-color: hwb(0 66% 31%);
+    border-radius: 10%;
+    box-shadow: 5px 5px 30px #555454;
+}
+
+form h2 {
+    text-align: center;
+    padding-left: 15px;
+    padding-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+form button {
+    margin-left: 35%;
+    margin-top: 5%;
+    width: 25%;
+}
+
+form button:hover {
+    background-color: #639df3;
+}
+
+.form-group {
+    margin-left: 15%;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[placeholder] {
+    font-size: smaller;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #b3e5f8;
+    width: 80%;
+}
+
+.check {
+    font-size: small;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #236cda;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.fig1 {
+    background-image: url(../img/fig1.png);
+}
+
+.fig2 {
+    background-image: url(../img/fig2.png);
+}
+
+.fig3 {
+    background-image: url(../img/fig3.png);
+}
+
+.titulos-contacto {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-bottom: #236cda solid;
+}
+
+.tablero-contacto {
+    width: 70%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 30px;
+}
+
+.item-contact :hover {
+    color: rgb(97, 92, 234);
+}
+
+.card-contacto {
+    background: #ffffff;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.card-contacto>article {
+    padding: 20px 20px 20px 20px;
+    color: #444;
+}
+
+.card-contacto>article h4 {
+    padding: 20px 20px 20px 20px;
+    color: #444;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-contacto>article span {
+    padding: 15px 0 0px 15px;
+    color: #444;
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.form-contacto-fondo {
+    background-color: #b3e5f8;
+    padding: 50px;
+    margin-top: 30px;
+    
+}
+
+.form-contacto {
+    background-color: white;
+    margin: 0 auto;
+    width: 40%;
+    padding: 20px;
+    border: 6px solid #ccc;
+    border-radius: 1em;
+    color: #999;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#areatext {
+    width: 80%;
+}
+
+#boton-cont {
+    font-weight: bold;
+    font-size: 12px;
+    border: 0px;
+    border-radius: 5px;
+    width: 40%;
+    background-color: #5dade2;
+    margin: 1rem 50%;
+    padding: 5px 50px;
+    text-align: right;
+    box-shadow: 0px 4px 0px hsl(204, 55%, 57%);
+}
+
+#boton-cont:hover {
+    background-color: #217ebc;
+}
+
+
+
+footer {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    background-color: #ececec;
+    color: #0b0b0b;
+    font-size: 15px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 55px;
+}
+
+.icons {
+    font-size: 25px;
+    color: #0b0b0b;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+}
+
+.icons a {
+    color: #080808c6;
+}
+
+.icons a :hover {
+    color: rgb(62, 62, 235);
+}
+
+@media screen and (min-width: 1024px) {
+    .item:hover {
+        transform: scale(1.07);
+        transition: all 0.1s;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media screen and (max-width: 1224px) {
+    .contenedor {
+        margin-bottom: 30px;
+    }
+
+    .tablero-container {
+        width: 85%;
+        margin: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .tablero-container {
+        width: 85%;
+        margin: auto;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .item article :hover {
+        color: rgb(97, 92, 234);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .contenido {
+        grid-gap: 4px;
+        margin-bottom: 15px;
+    }
+
+    .inner h2,
+    h3 {
+        font-size: 20px;
+    }
+
+    .inner h2 {
+        text-align: left;
+    }
+
+    .inner p {
+        margin-left: 3px;
+        padding-left: 3px;
+        font-size: 15px;
+    }
+
+    .tablero-contacto {
+        width: 70%;
+        margin: 0px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+
+    .form-contacto {
+        margin: 0 auto;
+        width: 80%;
+        font-size: 22px;
+    }
+
+    #boton-cont {
+
+        width: 40%;
+        margin: 1rem 50%;
+        padding: 5px 50px;
+        text-align: center;
+        box-shadow: 0px 4px 0px hsl(204, 55%, 57%);
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .menu-open,
+    .menu-close {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .menu-open {
+        color: #0b0b0b;
+        font-size: 3rem;
+        font-weight: bolder;
+    }
+
+    .menu-close {
+        color: #ececec;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0b0b0b;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+
+    .nav-list li :hover:not(.activo) {
+        text-decoration: none;
+        border-bottom: 0;
+        color: #3f35fdec;
+    }
+
+    .img-normalizada {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .seccion-primera {
+        width: 80%;
+    }
+
+    .contenido {
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+    }
+
+    .inner h2,
+    h3 {
+        padding-top: 15px;
+    }
+
+    .contenido p {
+        margin-top: 0px;
+        line-height: 1.5;
+    }
+
+    .tablero-container {
+        width: 80%;
+        margin: auto;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 721px) {
+    form {
+        width: 80%;
+        margin: 5% auto;
+        min-height: 70vh;
+        background-color: hwb(0 66% 31%);
+        border-radius: 10%;
+        box-shadow: 5px 5px 30px #555454;
+    }
+
+    footer {
+        font-size: 12px;
+        font-weight: bolder;
+        gap: 15px;
+    }
+}
